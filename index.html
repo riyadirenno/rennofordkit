@@ -11,14 +11,34 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="130418_chains_twine" startnode="1" creator="Twine" creator-version="2.2.1" ifid="CDA216DB-9B5C-4F6B-A30A-14548BEFA4DC" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Text Formatting */
+<tw-storydata name="130418_chains_twine" startnode="1" creator="Twine" creator-version="2.2.1" ifid="CDA216DB-9B5C-4F6B-A30A-14548BEFA4DC" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Navbar Formatting */
 
-span {
-  font-family: "Helvetica", sans-serif;
+.navbar-wrapper {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-areas:
+		"left-sidebar content right-sidebar"
+		"left-sidebar content right-sidebar"
+		"left-sidebar content right-sidebar";
   font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 0;
+  font-family: "Helvetica", sans-serif;
 }
+
+.navbar-left-sidebar {
+  grid-area: left-sidebar;
+}
+
+.navbar-content {
+  grid-area: content;
+}
+
+.navbar-right-sidebar {
+  grid-area: right-sidebar;
+  text-align: right;
+}
+
+/* Text Formatting */
+
 
 tw-link {
   color: white;
@@ -30,12 +50,6 @@ tw-link:hover {
   color: gray;
   font-weight: normal;
   text-decoration: underline;
-}
-
-p {
-  font-family: "Helvetica", sans-serif;
-  font-size: 18px;
-  color: grey;
 }
 
 /* Backgrounds */
@@ -216,8 +230,8 @@ tw-story[tags~="chains_clockFA"] {
  	background-attachment: fixed;
 }
 
-tw-story[tags~="chains_prisonbarFA"] {
-	background-image:url("https://raw.githubusercontent.com/riyadirenno/rennofordkit/master/chains/img/chains_prisonbarFA.png");
+tw-story[tags~="chains_lockedFA"] {
+	background-image:url("https://raw.githubusercontent.com/riyadirenno/rennofordkit/master/chains/img/chains_lockedFA.png");
 	background-size:contain;
   	background-position: center;
   	background-repeat: no-repeat;
@@ -232,17 +246,23 @@ tw-story[tags~="chains_goodendFA"] {
  	background-attachment: fixed;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Chains Introduction" tags="" position="550,349" size="100,100">&lt;span&gt;**Chains**
-(current-time:)&lt;/span&gt;
-
+</script><tw-passagedata pid="1" name="Welcome to Chains" tags="" position="548,296" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
 Hello and welcome to **Chains**. 
 
 Chains is an interactive narrative made with Twine. Here you will be playing as yourself, figuring out what happened prior to the story. The story is player-driven. You will have the ability select different options that are given which would trigger different events which would change the course of the story.
 
 This interactive narrative is made by (link: &quot;Renno Riyadi&quot;)[(open-url: &quot;riyadirenno.com&quot;;)] for the Authoring for Interactive Narrative module at DKIT. A whole documentation in regards to my progress in regards to building this project is available in my (link: &quot;blog&quot;)[(open-url: &quot;rennoformedai8z20.wordpress.com&quot;;)] for this module.
 
-[[ Click here to get Started ]]
-</tw-passagedata><tw-passagedata pid="2" name=" Click here to get Started " tags="" position="549,474" size="100,100">Hello.
+[[ Click here to get Started ]]</tw-passagedata><tw-passagedata pid="2" name=" Click here to get Started " tags="" position="544,470" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+Hello.
 
 You are currently chained.
 
@@ -250,7 +270,13 @@ Tell me...
 
 What&#39;s your name?
 
-[[ Your Name is... ]]</tw-passagedata><tw-passagedata pid="3" name=" Your Name is... " tags="" position="550,625" size="100,100">Hello player.
+[[ Your Name is... ]]
+</tw-passagedata><tw-passagedata pid="3" name=" Your Name is... " tags="" position="550,629" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+(set: $name to (prompt: &quot;What is your name?&quot;, &quot;&quot;))Hello $name.
 
 You are currently chained. 
 
@@ -258,108 +284,546 @@ Take a look around.
 
 What do you see?
 
-[[ Look around ]]</tw-passagedata><tw-passagedata pid="4" name=" Look around " tags="chains_eyesclosedFA" position="550,775" size="100,100">[[ Open your Eyes ]]</tw-passagedata><tw-passagedata pid="5" name=" Open your Eyes " tags="chains_eyesopenFA" position="550,925" size="100,100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis felis eu nisl accumsan molestie ac et est. Quisque vitae massa eget mi ornare commodo. Vestibulum fermentum augue semper, elementum dui ut, pulvinar ipsum. Fusce tempor diam vitae dolor pharetra accumsan. 
+[[ Look Around ]]</tw-passagedata><tw-passagedata pid="4" name=" Look Around " tags="chains_eyesclosedFA" position="550,774" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+It is pitch dark right now.
 
-Curabitur luctus cursus varius. Donec aliquet, dui et lacinia dictum, mi massa sodales dolor, et tincidunt lectus diam vel ante. Duis egestas sollicitudin dui, venenatis viverra sem placerat sed. Morbi vel odio ac enim ultricies pharetra. 
+You don&#39;t know where you are right now, but you&#39;ve felt something different on your wrist. You jiggle your wrist, and heard a slight clang sound. You are currently handcuffed.
 
-Nulla nisi massa, cursus vitae lorem a, varius malesuada urna. Pellentesque pharetra erat sit amet vehicula porttitor. Proin vitae dapibus est. Vestibulum eu arcu imperdiet, imperdiet lacus eget, varius risus.
+You are currently seated on a chair. The chair itself does not feel that comfortable and you can&#39;t bring yourself to stand up.
 
-[[ Look up ]]</tw-passagedata><tw-passagedata pid="6" name=" Look up " tags="chains_interrogatorsFA" position="550,1075" size="100,100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis felis eu nisl accumsan molestie ac et est. Quisque vitae massa eget mi ornare commodo. Vestibulum fermentum augue semper. 
+You might be able to see your surroundings if you were to open your eyes.
 
-Elementum dui ut, pulvinar ipsum. Fusce tempor diam vitae dolor pharetra accumsan. Curabitur luctus cursus varius. Donec aliquet, dui et lacinia dictum, mi massa sodales dolor, et tincidunt lectus diam vel ante. 
+[[ Open your Eyes ]]</tw-passagedata><tw-passagedata pid="5" name=" Open your Eyes " tags="chains_eyesopenFA" position="549,924" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You open your eyes. You still can&#39;t figure out where you are right now. The place is dimly lit with a light.
 
-Duis egestas sollicitudin dui, venenatis viverra sem placerat sed. Morbi vel odio ac enim ultricies pharetra. Nulla nisi massa, cursus vitae lorem a, varius malesuada urna. 
+You heard a voice from above your head.
 
+&quot;Hey.&quot;
 
-[[ Go on... ]]</tw-passagedata><tw-passagedata pid="7" name=" Go on... " tags="" position="550,1225" size="100,100">Do you know where you are?
+You decided to look up to see who&#39;s talking to you.
 
-[[ Yes ]]
-[[ No ]]</tw-passagedata><tw-passagedata pid="8" name=" Yes " tags="" position="475,1375" size="100,100">Okay.
+[[ Look Up ]]</tw-passagedata><tw-passagedata pid="6" name=" Look Up " tags="chains_interrogatorsFA" position="550,1073" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to look up.
 
-[[ Okay ]]</tw-passagedata><tw-passagedata pid="9" name=" No " tags="" position="625,1375" size="100,100">This is what&#39;s happening right now.
+You see a man who you assume is a police officer. He is wearing a dark police uniform you would often see in the movies.
 
-[[ Okay ]]</tw-passagedata><tw-passagedata pid="10" name=" Okay " tags="" position="550,1525" size="100,100">Do you know why you are currently being questionned here?
+&quot;Are you alright?&quot;, he asked. 
 
-[[ Yes, I know ]]
-[[ No, I don&#39;t ]]</tw-passagedata><tw-passagedata pid="11" name=" Yes, I know " tags="" position="475,1675" size="100,100">Really?
+Before answering his questions, you have a feeling that he is still looking to say a few words.
 
-[[ Insert answer here ]]</tw-passagedata><tw-passagedata pid="12" name=" No, I don&#39;t " tags="" position="625,1675" size="100,100">You are out conscious. 
+[[Let the Officer go on...]]</tw-passagedata><tw-passagedata pid="7" name="Let the Officer go on..." tags="" position="549,1228" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;You were unconcious when I saw you earlier, seems like you&#39;re back to your senses now.&quot;, he calmly explained.
 
-[[ I understand ]]</tw-passagedata><tw-passagedata pid="13" name=" I understand " tags="" position="625,1825" size="100,100">Double-click this passage to edit it.
+You&#39;re still unsure what is happening right now, but what you do know is that you are currently brought in for questionning.
 
-[[ Understood ]]</tw-passagedata><tw-passagedata pid="14" name=" Insert answer here " tags="" position="475,1825" size="100,100">Your Answer
+&quot;Do you know where you are right now?&quot;, the officer asked.
 
-[[ Their response ]]</tw-passagedata><tw-passagedata pid="15" name=" Understood " tags="" position="575,2125" size="100,100">Sit right there I will be right back.
+[[ Yes, I know where I am ]]
+[[ No, I don&#39;t know where I am ]]</tw-passagedata><tw-passagedata pid="8" name=" No, I don&#39;t " tags="" position="655,1660" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Well. We found onconscious outside a bar called Alexis near the town center. It is currently (current-time:) right now, but that&#39;s the least of our worries right now.
 
-[[ Look down ]]
-[[ Look right ]]
-[[ Look front ]]</tw-passagedata><tw-passagedata pid="16" name=" Their response " tags="" position="475,1975" size="100,100">Smartass
+The officer sighs, and takes a quick glance at you.
 
-[[ Understood ]]</tw-passagedata><tw-passagedata pid="17" name=" Look down " tags="chains_steelchairFA" position="425,2275" size="100,100">[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="18" name=" Look right " tags="chains_mirrorintFA" position="575,2275" size="100,100">[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="19" name=" Look front " tags="chains_doorclFA" position="725,2275" size="100,100">[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="20" name=" Look back to the Interrogators " tags="" position="550,2425" size="100,100">Here I have this folder.
+[[Let the Officer continue...]]</tw-passagedata><tw-passagedata pid="9" name="Let the Officer continue..." tags="" position="559,1805" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+The officer stands up.
 
-[[ Look at the folder ]]</tw-passagedata><tw-passagedata pid="21" name=" Look at the folder " tags="chains_folderFA" position="550,2575" size="100,100">Ok. Here.
+&quot;Right, I&#39;m now going to get some documents outside and I&#39;d like you to remain still and quiet for now.&quot;
 
-[[ Look at photo ]]</tw-passagedata><tw-passagedata pid="22" name=" Look at photo " tags="chains_emilypolFA" position="550,2725" size="100,100">This is Emily.
+&quot;Do you understand that?&quot;
 
-[[ Let the man go on... ]]</tw-passagedata><tw-passagedata pid="23" name=" Let the man go on... " tags="" position="550,2875" size="100,100">Sed eget euismod lectus. Sed iaculis ligula et nunc eleifend blandit. Aliquam nec efficitur turpis. Aliquam rutrum, magna et lacinia scelerisque, metus lorem commodo magna, sit amet gravida nibh enim eu enim. 
+[[ Understood ]]</tw-passagedata><tw-passagedata pid="10" name=" Understood " tags="" position="556,1927" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Good. Just stay there and I&#39;ll be right back.&quot;
 
-Nam dui ante, sodales et convallis ac, tristique at dui. Maecenas mollis cursus ante vel auctor. 
+The officer would exit the interrogation room and you are currently left alone.
 
-Quisque eu nibh id neque tristique vehicula eu vitae augue. Aliquam rhoncus tortor in aliquet convallis. Donec sagittis lorem id metus cursus, gravida maximus arcu iaculis.
+You&#39;ve decided that it&#39;s best to look around to waste time.
 
-Does she look familiar?
+[[ Look Down ]]
+[[ Look Right ]]
+[[ Look Front ]]</tw-passagedata><tw-passagedata pid="11" name=" Look Down " tags="chains_steelchairFA" position="360,2089" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to get a better look on the chair you are sitting on.
+
+The chair itself is nothing special, it&#39;s made out of steel, and it&#39;s extremely uncomfortable to sit on.
+
+You heard a noise. The Interrogators is back into the room bringing in a folder in his hand.
+
+[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="12" name=" Look Right " tags="chains_mirrorintFA" position="527,2094" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to look to the right of you.
+
+You see a mirror which reflects your own reflection. You find it weird on the reason why an interrogation room have a mirror attached, then you remember that though you can only see yourself in that mirror, other people would be able to see pass through the mirror. 
+
+You&#39;ve felt like someone is watching you right now.
+
+You heard a noise. The Interrogators is back into the room bringing in a folder in his hand.
+
+[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="13" name=" Look Front " tags="chains_doorclFA" position="659,2082" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to take a better look in front of you.
+
+You see the door the Interrogators exitted the room earlier. The door looked like it&#39;s made of steel. There is a small block of glass on the door which allows you to see what is beneath the door. Since you are currently seated right now you really can&#39;t do anything at this point.
+
+You heard a noise. The Interrogators is back into the room bringing in a folder in his hand.
+
+[[ Look back to the Interrogators ]]</tw-passagedata><tw-passagedata pid="14" name=" Look back to the Interrogators " tags="" position="537,2248" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+The Interrogators sits down on the chair in front of you.
+
+&quot;Here, this folder contains everything that is related to what is happening right now. I will unlock you from your handcuffs now so you can have a better look on it.&quot;
+
+The Interrogators walked by behind you and starts to unlock your handcuffs.
+
+&quot;You can have a look on that folder now.&quot;, he said.
+
+You decided to look at the folder.
+
+[[ Look at the folder ]]</tw-passagedata><tw-passagedata pid="15" name=" Look at the folder " tags="chains_folderFA" position="537,2389" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+The folder simply says &quot;Confidential&quot; in its cover. You decided to open the folder.
+
+You see a collection of Photos. There&#39;s a picture of a girl, and a picture of a pill. There are some other documents in the folder but you decided not to take a deeper look on that.
+
+&quot;Now, I want you to focus on this photo here.&quot;
+
+The officer pushes a photo towards you.
+
+[[Look at the Photo]]</tw-passagedata><tw-passagedata pid="16" name="Look at the Photo" tags="chains_emilypolFA" position="535,2538" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Right, I understand that you&#39;ve had a long day and I&#39;d assume you would have no recollection on what is happening right now, but I will try to explain this as simple as possible.&quot;
+
+You looked at the photo the Interrogators have on his hand.
+
+&quot;This is Sarah, she was found unconscious similarly to you outside Alexis. Unlike you, she is found in a more critical state than you and is needed medical assistance. You, we just found blackout drunk.&quot;
+
+...
+
+[[Let the Officer continue ]]</tw-passagedata><tw-passagedata pid="17" name="Let the Officer continue " tags="" position="537,2689" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Now, we know you are last seen in Alexis last night. This might be too much to ask, but I really need your cooperation here.&quot;
+
+&quot;Does she look familiar?&quot;
+
+You take another look at the photo.
 
 [[ Yes, She does ]]
-[[ No, She does not ]]</tw-passagedata><tw-passagedata pid="24" name=" Yes, She does " tags="" position="475,3025" size="100,100">[[ Try to remember ]]</tw-passagedata><tw-passagedata pid="25" name=" No, She does not " tags="" position="625,3025" size="100,100">[[ Try to remember ]]</tw-passagedata><tw-passagedata pid="26" name=" Try to remember " tags="" position="550,3150" size="100,100">[[ Let me think ]]</tw-passagedata><tw-passagedata pid="27" name=" Let me think " tags="chains_barextFA" position="550,3300" size="100,100">[[ Inside the Bar ]]</tw-passagedata><tw-passagedata pid="28" name=" Inside the Bar " tags="" position="550,3450" size="100,100">[[ Hello bartender ]]</tw-passagedata><tw-passagedata pid="29" name=" Hello bartender " tags="chains_bartenderFA" position="550,3600" size="100,100">[[ Who is that? ]]</tw-passagedata><tw-passagedata pid="30" name=" Who is that? " tags="chains_culp01" position="550,3750" size="100,100">[[ He has a key ]]</tw-passagedata><tw-passagedata pid="31" name=" He has a key " tags="chains_keyFA" position="550,3900" size="100,100">[[ One pint ]]</tw-passagedata><tw-passagedata pid="32" name=" One pint " tags="chains_pintFA" position="550,4050" size="100,100">[[ Some kind of pills ]]</tw-passagedata><tw-passagedata pid="33" name=" Some kind of pills " tags="chains_culp02FA" position="550,4200" size="100,100">[[ He puts it on her drink ]]</tw-passagedata><tw-passagedata pid="34" name=" He puts it on her drink " tags="" position="550,4350" size="100,100">[[ Back to reality ]]</tw-passagedata><tw-passagedata pid="35" name=" Back to reality " tags="" position="550,4500" size="100,100">Can you try to remember what he looks like? 
+[[ No, She does not ]]</tw-passagedata><tw-passagedata pid="18" name=" Yes, She does " tags="" position="460,2838" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Great!&quot;
 
-[[ His shoes... ]]
-[[ His pants... ]]
-[[ His top... ]]
-[[ His facial appearance ]]</tw-passagedata><tw-passagedata pid="36" name=" His shoes... " tags="chains_culp03FA" position="325,4650" size="100,100">Double-click this passage to edit it.
+&quot;Now, I want you to try remember everything you did last night. No rush, and I will try to help you along the way.&quot;
 
-[[ His pants... ]]
-[[ His top... ]]
-[[ His facial appearance ]]
-[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="37" name=" His pants... " tags="chains_culp04FA" position="475,4650" size="100,100">Double-click this passage to edit it.
+[[ Try to Remember ]]</tw-passagedata><tw-passagedata pid="19" name=" No, She does not " tags="" position="615,2839" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;That&#39;s unfortunate. However we need to go on.&quot;
 
-[[ His shoes... ]]
-[[ His top... ]]
-[[ His facial appearance ]]
-[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="38" name=" His top... " tags="chains_culp05FA" position="625,4650" size="100,100">Double-click this passage to edit it.
+&quot;Now, I want you to try remember everything you did last night. No rush, and I will try to help you along the way.&quot;
 
-[[ His shoes... ]]
-[[ His pants... ]]
-[[ His facial appearance ]]
-[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="39" name=" His facial appearance " tags="chains_culp06FA" position="775,4650" size="100,100">Double-click this passage to edit it.
+[[ Try to Remember ]]</tw-passagedata><tw-passagedata pid="20" name=" Try to Remember " tags="" position="536,2987" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Along this process, I will show you pictures which represents the things you might see along the way. You just need to let me know whether we are going the right way or not.&quot;
 
-[[ His shoes... ]]
-[[ His pants... ]]
-[[ His top... ]]
-[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="40" name=" Is that it? " tags="" position="550,4800" size="100,100">Double-click this passage to edit it.
+You nodded and started to think on what happened the night prior.
 
-[[ Combing all together ]]</tw-passagedata><tw-passagedata pid="41" name=" Combing all together " tags="" position="550,4950" size="100,100">Double-click this passage to edit it.
+[[ Let me Think ]]</tw-passagedata><tw-passagedata pid="21" name=" Let me Think " tags="chains_barextFA" position="538,3113" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+It was 10 that night.
 
-[[ Almost there ]]</tw-passagedata><tw-passagedata pid="42" name=" Almost there " tags="" position="550,5100" size="100,100">Double-click this passage to edit it.
+You&#39;ve just got back from work after working overtime. You start work pretty late tomorrow anyways so you decided to go a bar close to you and have a few drinks.
 
-[[ Does he looks like this? ]]</tw-passagedata><tw-passagedata pid="43" name=" Does he looks like this? " tags="" position="550,5250" size="100,100">Double-click this passage to edit it.
+The bar name is Alexis. The place looked like your plain average bar in town. 
 
-[[ He does! ]]</tw-passagedata><tw-passagedata pid="44" name=" He does! " tags="" position="550,5400" size="100,100">Double-click this passage to edit it.
+You texted your friends asking them where they are right now.
 
-[[ You are free now ]]</tw-passagedata><tw-passagedata pid="45" name=" You are free now " tags="" position="550,5550" size="100,100">Double-click this passage to edit it.
+You received no response.
 
-[[ Look above you ]]
-[[ Look beside you ]]
-[[ Look in front ]]</tw-passagedata><tw-passagedata pid="46" name=" Look above you " tags="" position="400,5700" size="100,100">Double-click this passage to edit it.
+Instead of waiting for them, you decided to go ahead and get in first.
 
-[[ Look beside you ]]
-[[ Look in front ]]</tw-passagedata><tw-passagedata pid="47" name=" Look beside you " tags="" position="550,5700" size="100,100">Double-click this passage to edit it.
+[[ Inside the Bar ]]</tw-passagedata><tw-passagedata pid="22" name=" Inside the Bar " tags="chains_barintFA" position="538,3263" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You entered the bar.
 
-[[ Look above you ]]
-[[ Look in front ]]</tw-passagedata><tw-passagedata pid="48" name=" Look in front " tags="" position="700,5700" size="100,100">Double-click this passage to edit it.
+There are three bar stools empty just by the bar. You checked your phone, still no response.
 
-[[ Game over ]]</tw-passagedata><tw-passagedata pid="49" name=" Game over " tags="" position="700,5850" size="100,100">Double-click this passage to edit it.
+You decided might as well get a drink while waiting for them, hence you walked closer to the bar.
 
-[[ Thank you ]]</tw-passagedata><tw-passagedata pid="50" name=" Thank you " tags="" position="700,6000" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+As the place is not that crowded that night, you decided to get the bartender&#39;s attention.
+
+[[Get the Bartender&#39;s attention]]</tw-passagedata><tw-passagedata pid="23" name="Get the Bartender&#39;s attention" tags="chains_bartenderFA" position="537,3413" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Well? What you having tonight?&quot;, he asked.
+
+You&#39;ve seen the bartender often, as this is where you and your friends usually have drinks during the weekend.
+
+You decided to get their cheapest pint as you are trying to save some money for the month.
+
+Whilst waiting, you saw someone across the bar. Your memory is still hazy as of now, but you have a feeling that this might be the guy the officers are looking for.
+
+[[ Who is That? ]]</tw-passagedata><tw-passagedata pid="24" name=" Who is That? " tags="chains_culp01FA" position="531,3556" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You think harder.
+
+You can&#39;t seem to figure out who the mystery man is.
+
+&quot;There&#39;s no need to hurry now.&quot;, the officer said to you. &quot;Let&#39;s take a step back and bring this to the very beginning. What do you notice first when you see him?&quot;
+
+You remember that he has a key on his bet loop.
+
+[[&quot;He has a key...&quot;]]</tw-passagedata><tw-passagedata pid="25" name="&quot;He has a key...&quot;" tags="chains_keyFA" position="517,3703" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Ah, OK. That&#39;s fair enough. Most people would put their keys on their pockets but this guy puts his keys on his bet loop. Fine. What else do you remember?&quot;
+
+You remember that there was a pint glass infront of him. The pint is filled with beer. You also noticed someone sitting just beside him. It&#39;s Sarah! The girl on the picture the officers showed you earlier. 
+
+&quot;Go on.&quot;
+
+[[&quot;There&#39;s a Pint glass...&quot;]]</tw-passagedata><tw-passagedata pid="26" name="&quot;There&#39;s a Pint glass...&quot;" tags="chains_pintFA" position="522,3853" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You noticed the mystery man is reaching out to his pocket. Sarah is oblivious to what the mystery man is doing and is checking her phone.
+
+You saw the mystery man grabbing something out of his pocket.
+
+It looked pills, well you think it looked like it.
+
+[[&quot;Some kind of Pills...&quot;]]</tw-passagedata><tw-passagedata pid="27" name="&quot;Some kind of Pills...&quot;" tags="chains_pillsFA" position="527,4010" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+He takes out the pills you saw him take out from his pocket and hid it on his hands. He takes a quick look back to Sarah, whom are still busy with her phone.
+
+He decided to take this opportunity to put the pills on her drink.
+
+The pills dissolve as soon as it entered the glass...
+
+[[He puts the Pills on her Drink]]</tw-passagedata><tw-passagedata pid="28" name="He puts the Pills on her Drink" tags="chains_culp02FA" position="525,4153" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+This must be the reason she&#39;s found unconscious. He must&#39;ve drugged her drink. 
+
+You heard a voice beside you.
+
+&quot;Hey. Here&#39;s your pint.&quot;
+
+It&#39;s the bartender, he puts down your beer infront of you.
+
+&quot;Thanks.&quot;
+
+You give the money for your beer to Bartender and take a sip of your drink.
+
+That&#39;s everything you&#39;ve remembered so far.
+
+[[ Back to Reality ]]</tw-passagedata><tw-passagedata pid="29" name=" Back to Reality " tags="" position="538,4312" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Well, I think that&#39;s a very good start. We now know the method he did which caused the accident. Now, I would like you to describe what the man looks like. You can describe any of his features in any order. We will combine everything we have later in the end&quot;
+
+You try to remember what the mystery man looks like.
+
+[[ His Shoes... ]]
+[[ His Pants... ]]
+[[ His Top... ]]
+[[ His Face...]]</tw-passagedata><tw-passagedata pid="30" name=" His Shoes... " tags="chains_culp03FA" position="307,4462" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to focus on what kind of shoes the mystery man is wearing that night.
+
+He was wearing a casual sneaker, with some sort of badge patched just near the end.
+
+You also noticed the socks he is wearing. He&#39;s wearing striped socks. 
+
+&quot;That&#39;s really helpful there. Here, I&#39;ve just created a sketch of his shoes and socks similarly to the description you gave me earlier.
+
+&quot;Is there anything else you can tell me?&quot;
+
+[[ His Pants... ]]
+[[ His Top... ]]
+[[ His Face...]]
+[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="31" name=" His Pants... " tags="chains_culp04FA" position="463,4463" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to focus on what kind of pants the mystery man is wearing that night.
+
+You try to think back to shoe the mystery guy is wearing. You noticed that the mystery man cuffed his trousers, that&#39;s how you can point out what socks he is wearing in the first place!
+
+&quot;Is there anything else you can add from that? He can easily uncuff his pants after he exits the bar so that wouldn&#39;t do us much good I&#39;m afraid.&quot;
+
+He&#39;s wearing jeans. That&#39;s the reason why you noticed the cuffs. Some jeans have interesting patterns near the seams but the mystery man seems to be wearing your average jeans you can get easily in the shops.
+
+&quot;That&#39;s really helpful there. Here, I&#39;ve just created a sketch of his pants similarly to the description you gave me earlier.
+
+&quot;Is there anything else you can tell me?&quot;
+
+[[ His Shoes... ]]
+[[ His Top... ]]
+[[ His Face...]]
+[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="32" name=" His Top... " tags="chains_culp05FA" position="614,4463" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to focus on what kind of top the mystery man is wearing that night.
+
+He was wearing a white top with Guxxi printed on the chest. You noticed that because the shirt is simply a cheap knock-off to the brand Gucci.
+
+&quot;That&#39;s actually very helpful. I would say there won&#39;t be much people owning counterfeit Gucci shirts here so I think that will help us tremendously.&quot;
+
+&quot;Is there anything else you can tell me?&quot;
+
+[[ His Shoes... ]]
+[[ His Pants... ]]
+[[ His Face...]]
+[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="33" name=" His Face..." tags="chains_culp06FA" position="765,4463" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to focus on the face of the mystery man.
+
+He was wearing a beanie. That&#39;s the only thing you can remember from his face.
+
+&quot;That&#39;s very vague however I appreciate that you can tell me this much.&quot;
+
+&quot;Is there anything else you can tell me?&quot;
+
+[[ His Shoes... ]]
+[[ His Pants... ]]
+[[ His Top... ]]
+[[ Is that it? ]]</tw-passagedata><tw-passagedata pid="34" name=" Is that it? " tags="" position="532,4709" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Thanks for telling me all this. As I&#39;ve stated earlier, whilst you were describing his features, I took the time to gather all assets and sketch everything based on the description you gave me earlier.
+
+&quot;Please wait for a minute.&quot;
+
+As the Interrogators are finishing up gathering all the assets, you decided to sit down quietly and wait for him to finish.
+
+[[ Combining it all together ]]</tw-passagedata><tw-passagedata pid="35" name=" Combining it all together " tags="" position="528,4931" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+The Interrogators hand you a collection of photos based on the description you gave earlier.
+
+&quot;So, here is everything you described to me earlier. The simple sneakers with a badge patched on, striped socks, cuffed jeans, counterfeit Gucci shirt and a beanie with no notable physical features.&quot;
+
+&quot;Does the mystery man looks like this?&quot;
+
+[[ He does! ]]</tw-passagedata><tw-passagedata pid="36" name=" He does! " tags="" position="535,5216" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Perfect! Thank you foor cooperating with us all this time. I really appreciate everything you did earlier and I believe that if everything you said is right on the money we will have the man captured as soon as possible.&quot;
+
+&quot;You are now free to leave this room, please head out to the front to get all your belongings back from us. I hope you have a nice day!&quot;
+
+The officer opens the interrogation room door and leads you to the front office of the station.
+
+[[ Exit the Room ]]
+
+
+
+
+</tw-passagedata><tw-passagedata pid="37" name=" About Chains" tags="" position="1234,605" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+
+Chains is an interactive narrative made with Twine. Here you will be playing as yourself, figuring out what happened prior to the story. The story is player-driven. You will have the ability select different options that are given which would trigger different events which would change the course of the story.
+
+This interactive narrative is made by (link: &quot;Renno Riyadi&quot;)[(open-url: &quot;riyadirenno.com&quot;;)] for the Authoring for Interactive Narrative module at DKIT. A whole documentation in regards to my progress in regards to building this project is available in my (link: &quot;blog&quot;)[(open-url: &quot;rennoformedai8z20.wordpress.com&quot;;)] for this module.
+
+</tw-passagedata><tw-passagedata pid="38" name=" No, I don&#39;t know where I am " tags="" position="616,1384" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You look around the room, but you can&#39;t seem to grasp where you are right now.
+
+&quot;Well, you are currently in an interrogation room. You are brought here for some questionning&quot;, the officer replied.
+
+&quot;You&#39;ve never seen one of these rooms before?&quot;, he asked.
+
+You&#39;ve felt that he is asking you a rhetorical question hence you decided to say nothing and just let the officer continue his sentence.
+
+[[ Let the Officer go on... ]]</tw-passagedata><tw-passagedata pid="39" name=" Yes, I know where I am " tags="" position="485,1382" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You look around the room you are currently in.
+
+It looked oddly similar to the interrogation rooms you would probably see in a police station. 
+
+&quot;Well, that just makes things simpler then.&quot;
+
+[[ Let the Officer go on... ]]</tw-passagedata><tw-passagedata pid="40" name=" Let the Officer go on... " tags="" position="543,1508" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Right.&quot;
+
+&quot;Since we&#39;re in the same page now, let me ask you a question. Do you know why you are currently being questionned here?&quot;, he asked.
+
+[[ Yes, I do ]]
+[[ No, I don&#39;t ]]</tw-passagedata><tw-passagedata pid="41" name=" Yes, I do " tags="" position="463,1660" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+&quot;Well smartass, let me break it down for you - You don&#39;t.&quot;
+
+&quot;When I brought you in here, you were unconscious. What are you thinking to achieve when you said that?&quot;
+
+The officer sighs, and takes a quick glance at you.
+
+[[Let the Officer continue...]]</tw-passagedata><tw-passagedata pid="42" name=" Exit the Room " tags="" position="541,5336" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+Whilst on your way, you decided to take a look around to see what&#39;s in the building.
+
+[[ Look Above ]]
+[[ Look Beside You ]]
+[[ Look in Front ]]</tw-passagedata><tw-passagedata pid="43" name=" Look Above " tags="chains_clockFA" position="389,5488" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to look up.
+
+You noticed the broken clock that is hanged on the wall. You wondered to yourself if the police officers here noticed if they a broken clock hanged in the open.
+
+You decided to keep it to yourself.
+
+Is there anything else you noticed?
+
+[[ Look Beside You ]]
+[[ Look in Front ]]</tw-passagedata><tw-passagedata pid="44" name=" Look Beside You " tags="chains_lockedFA" position="538,5487" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to look beside you.
+
+You see a couple of empty cells on your way to the front office. You wonder to yourself whether all convicts whom are placed in the cells are there placed in a different cell deeper in the station? In the end, this does not concern you as you are leaving the station nonetheless.
+
+Is there anything else you noticed?
+
+[[ Look Above ]]
+[[ Look in Front ]]</tw-passagedata><tw-passagedata pid="45" name=" Look in Front " tags="chains_goodendFA" position="689,5485" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+You decided to look in front of you.
+
+You finally see the front office of the police station. The officer hand over all your belongings to you and leave the room. You are now left on your own in the reception area.
+
+You decided to leave the station as you have no other reason to stay there longer.
+
+[[ Game Over ]]</tw-passagedata><tw-passagedata pid="46" name=" Game Over " tags="" position="689,5635" size="100,100">&lt;div class=&quot;navbar-wrapper&quot;&gt;
+  		&lt;div class=&quot;navbar-left-sidebar&quot;&gt;**Chains**&lt;/div&gt;
+  		&lt;div class=&quot;navbar-content&quot;&gt;(current-date:), (current-time:)&lt;/div&gt;
+  		&lt;div class=&quot;navbar-right-sidebar&quot;&gt;[[ About Chains]]&lt;/div&gt;
+&lt;/div&gt;
+Thank you for playing Chains!
+
+You&#39;ve now reached the end of the game.
+
+If you noticed any bugs or issues, please send an email to D00188695@student.dkit.ie and I will fix the issue as soon as possible.
+
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
