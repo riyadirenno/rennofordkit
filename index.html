@@ -11,7 +11,36 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="130418_chains_twine" startnode="1" creator="Twine" creator-version="2.2.1" ifid="CDA216DB-9B5C-4F6B-A30A-14548BEFA4DC" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story[tags~="chains_eyesclosedFA"] {
+<tw-storydata name="130418_chains_twine" startnode="1" creator="Twine" creator-version="2.2.1" ifid="CDA216DB-9B5C-4F6B-A30A-14548BEFA4DC" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Text Formatting */
+
+span {
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+tw-link {
+  color: white;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+tw-link:hover {
+  color: gray;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+p {
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  color: grey;
+}
+
+/* Backgrounds */
+
+tw-story[tags~="chains_eyesclosedFA"] {
 	background-image:url("https://raw.githubusercontent.com/riyadirenno/rennofordkit/master/chains/img/chains_eyesclosedFA.png");
 	background-size:contain;
   	background-position: center;
@@ -201,16 +230,19 @@ tw-story[tags~="chains_goodendFA"] {
   	background-position: center;
   	background-repeat: no-repeat;
  	background-attachment: fixed;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Chains Introduction" tags="" position="550,350" size="100,100">Hello and welcome to Chains. 
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</script><tw-passagedata pid="1" name="Chains Introduction" tags="" position="550,349" size="100,100">&lt;span&gt;**Chains**
+(current-time:)&lt;/span&gt;
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis felis eu nisl accumsan molestie ac et est. Quisque vitae massa eget mi ornare commodo. Vestibulum fermentum augue semper, elementum dui ut, pulvinar ipsum. Fusce tempor diam vitae dolor pharetra accumsan. 
+Hello and welcome to **Chains**. 
 
-Curabitur luctus cursus varius. Donec aliquet, dui et lacinia dictum, mi massa sodales dolor, et tincidunt lectus diam vel ante. Duis egestas sollicitudin dui, venenatis viverra sem placerat sed. 
+Chains is an interactive narrative made with Twine. Here you will be playing as yourself, figuring out what happened prior to the story. The story is player-driven. You will have the ability select different options that are given which would trigger different events which would change the course of the story.
 
-Morbi vel odio ac enim ultricies pharetra. Nulla nisi massa, cursus vitae lorem a, varius malesuada urna. Pellentesque pharetra erat sit amet vehicula porttitor. 
+This interactive narrative is made by (link: &quot;Renno Riyadi&quot;)[(open-url: &quot;riyadirenno.com&quot;;)] for the Authoring for Interactive Narrative module at DKIT. A whole documentation in regards to my progress in regards to building this project is available in my (link: &quot;blog&quot;)[(open-url: &quot;rennoformedai8z20.wordpress.com&quot;;)] for this module.
 
- [[ Click here to get Started ]]
-</tw-passagedata><tw-passagedata pid="2" name=" Click here to get Started " tags="" position="550,475" size="100,100">Hello.
+[[ Click here to get Started ]]
+</tw-passagedata><tw-passagedata pid="2" name=" Click here to get Started " tags="" position="549,474" size="100,100">Hello.
 
 You are currently chained.
 
